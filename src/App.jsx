@@ -7,13 +7,25 @@ import Packages from './components/Packages.tsx';
 function App() {
   const [packagesData, setPackagesData] = useState([]);
   const [sort, setSort] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {  
     getPackages()
       .then(res => res.json())
-      .then(data => setPackagesData(data))
-      .catch(err => console.log(err));
+      .then(data => {
+        setPackagesData(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+        setError('Failed to load packages');
+        setLoading(false);
+      });
   }, []);
+  
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <>

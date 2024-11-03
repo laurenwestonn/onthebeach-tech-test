@@ -2,7 +2,7 @@ import React from 'react';
 
 // Todo: move this to common types file
 type SortType = {
-    setSort: (string) => {}
+    setSort: (sort: string) => void
 };
 
 function Sort(props: SortType) {
@@ -11,8 +11,8 @@ function Sort(props: SortType) {
 
     return ( 
         <div className="container">
-            {sortOptions.map(sortOption => 
-                <button onClick={() => props.setSort(sortOption)}>sort {sortOption}</button>
+            {sortOptions.map((sortOption, i) => 
+                <button key={i} onClick={() => props.setSort(sortOption)}>sort {sortOption}</button>
             )}
         </div>
     );

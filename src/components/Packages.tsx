@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useMemo} from "react";
 import PackageCard from "./PackageCard.tsx";
 
 function Packages(props) {
-  const getSortedPackages = () => {
+  const getSortedPackages = useMemo(() => {
     switch(props.sort) {
       case 'alphabetically':
           return [...props.packages].sort((a, b) => {
@@ -19,11 +19,11 @@ function Packages(props) {
       default:
           return props.packages;
     }
-  };
+  }, [props.packages, props.sort]);
 
   return (         
       <div className="packages">
-      {getSortedPackages().map(packageData => 
+      {getSortedPackages.map(packageData => 
           <PackageCard
               key={packageData.resort.id}
               resort={packageData.resort}
