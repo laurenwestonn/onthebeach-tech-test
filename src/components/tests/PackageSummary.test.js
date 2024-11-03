@@ -12,6 +12,10 @@ describe("PackageSummary", () => {
         startDate: '2023-12-01',
         numberOfDays: 7,
         airportName: 'Glasgow',
+        price: {
+            amount: 123,
+            currency: 'GBP'
+        }
     };
 
     it("displays the resort name", () => {
