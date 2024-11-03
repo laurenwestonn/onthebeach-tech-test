@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { getHotels } from './api';
-import HotelsList from './components/HotelsList.tsx';
+import HotelsList from './components/Packages.tsx';
 
 function App() {
 
