@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { getHotels } from './api';
+import HotelsList from './components/HotelsList.tsx';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
   }, []);
 
   return (
-    Hotels
+    <HotelsList hotels={hotels}/>
   );
 }
 
