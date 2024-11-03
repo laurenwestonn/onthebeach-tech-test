@@ -15,16 +15,19 @@ function App() {
   }, []);
 
   return (
-    <div className='packages'>
+    <>
+      <a className="skip" href="#main">Skip to main content</a>      
       {packagesData.map(packageData => 
-          <PackageCard
-              key={packageData.resort.id}
-              resort={packageData.resort}
-              flightDetails={packageData.flightDetails}
-              bookingDetails={packageData.bookingDetails}
-          />
+        <main id="main" className="packages">
+            <PackageCard
+                key={packageData.resort.id}
+                resort={packageData.resort}
+                flightDetails={packageData.flightDetails}
+                bookingDetails={packageData.bookingDetails}
+            />
+        </main>
       )}
-  </div>
+  </>
   );
 }
 
