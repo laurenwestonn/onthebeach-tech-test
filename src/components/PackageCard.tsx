@@ -3,7 +3,7 @@ import PackageSummary from "./PackageSummary.tsx";
 
 function PackageCard({ resort, bookingDetails, flightDetails}) {
     return (
-        <div key={resort.id}>
+        <div className="package-card" key={resort.id}>
             <div className="row">
             <img src={resort.image.url} alt={resort.image.description} />
             <PackageSummary 

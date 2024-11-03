@@ -23,7 +23,7 @@ function App() {
         setLoading(false);
       });
   }, []);
-  
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
@@ -31,7 +31,7 @@ function App() {
     <>
       <a className="skip" href="#main">Skip to main content</a>      
       <main id="main" className="packages">
-        <Sort setSort={setSort}/>
+        <Sort sort={sort} setSort={setSort}/>
         <Packages sort={sort} packages={packagesData}/>
       </main>
   </>

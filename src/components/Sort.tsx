@@ -2,7 +2,8 @@ import React from 'react';
 
 // Todo: move this to common types file
 type SortType = {
-    setSort: (sort: string) => void
+    setSort: (sort: string) => void,
+    sort: 'alphabetically' | 'price' | 'star rating'
 };
 
 function Sort(props: SortType) {
@@ -12,7 +13,13 @@ function Sort(props: SortType) {
     return ( 
         <div className="container">
             {sortOptions.map((sortOption, i) => 
-                <button key={i} onClick={() => props.setSort(sortOption)}>sort {sortOption}</button>
+                <button 
+                  key={i} 
+                  aria-pressed={props.sort == sortOption}
+                  onClick={() => props.setSort(sortOption)}
+                >
+                  sort {sortOption}
+                </button>
             )}
         </div>
     );
