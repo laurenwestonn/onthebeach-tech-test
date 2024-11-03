@@ -5,7 +5,6 @@ import { PackagesType } from "./types/PackageTypes.tsx";
 function Packages(props: PackagesType) {
     return (
         <div>
-            <h1>Packages</h1>
             {props.packagesData.map(packageData => 
                 <PackageCard 
                     key={packageData.resort.id}
