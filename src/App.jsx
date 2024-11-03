@@ -1,4 +1,4 @@
-import './App.css';
+import './css/packages.css';
 import { useEffect, useState } from 'react';
 import { getPackages } from './api';
 import PackageCard from './components/PackageCard.tsx';

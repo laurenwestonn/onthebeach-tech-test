@@ -1,0 +1,27 @@
+/* create responsive styles so mobile view works */
+
+:root {
+    --dark-blue: #17317F;
+    --yellow: #FEDC07;
+}
+
+h1, h2, h3 {
+    color: var(--dark-blue);
+}
+
+.container {
+    padding: 12px;
+}
+
+.row {
+    display: flex
+}
+
+.primary-btn {
+    color: var(--dark-blue);
+    background-color: var(--yellow);
+    padding: 16px 12px;
+    margin: 12px 0;
+    text-align: center;
+    width: 100%;
+}
