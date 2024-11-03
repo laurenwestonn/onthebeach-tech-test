@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { getPackages } from './api';
-import Packages from './components/Packages.tsx';
+import PackageCard from './components/PackageCard.tsx';
 
 function App() {
 
@@ -15,7 +15,16 @@ function App() {
   }, []);
 
   return (
-    <Packages packagesData={packagesData}/>
+    <div className='packages'>
+      {packagesData.map(packageData => 
+          <PackageCard
+              key={packageData.resort.id}
+              resort={packageData.resort}
+              flightDetails={packageData.flightDetails}
+              bookingDetails={packageData.bookingDetails}
+          />
+      )}
+  </div>
   );
 }
 

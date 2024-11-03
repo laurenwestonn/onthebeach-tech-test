@@ -1,23 +1,21 @@
 import React from "react";
 import PackageSummary from "./PackageSummary.tsx";
-import { PackageType } from "./types/PackageTypes.tsx";
 
-
-function PackageCard(props: PackageType) {
+function PackageCard({ resort, bookingDetails, flightDetails}) {
     return (
-        <div key={props.resort.id}>
-            <img src={props.resort.image.url} alt={props.resort.image.description} />
+        <div key={resort.id}>
+            <img src={resort.image.url} alt={resort.image.description} />
             <PackageSummary 
-                resortName={props.resort.name}
-                location={`${props.resort.regionName}, ${props.resort.countryName}`}
-                rating={props.resort.starRating}
-                travellers={props.bookingDetails.party}
-                startDate={props.flightDetails.departureDate}
-                numberOfDays={props.bookingDetails.lengthOfStay}
-                airportName={props.flightDetails.departureAirport}
-                price={props.bookingDetails.price}
+                resortName={resort.name}
+                location={`${resort.regionName}, ${resort.countryName}`}
+                rating={resort.starRating}
+                travellers={bookingDetails.party}
+                startDate={flightDetails.departureDate}
+                numberOfDays={bookingDetails.lengthOfStay}
+                airportName={flightDetails.departureAirport}
+                price={bookingDetails.price}
             />
-            <p>{props.resort.overview}</p>
+            <p>{resort.overview}</p>
         </div>
     );
 }

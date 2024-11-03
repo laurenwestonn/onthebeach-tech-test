@@ -35,12 +35,6 @@ type BookingDetailsType = {
     price: PriceType;
 };
 
-export type PackageType = {
-    resort: ResortType;
-    flightDetails: FlightDetailsType;
-    bookingDetails: BookingDetailsType;
-};
-
 export type PackageSummaryType = {
     resortName: string;
     location: string;
@@ -51,7 +45,3 @@ export type PackageSummaryType = {
     airportName: string;
     price: PriceType;
 };
-
-export type PackagesType = {
-    packagesData: PackageType[];
-}
