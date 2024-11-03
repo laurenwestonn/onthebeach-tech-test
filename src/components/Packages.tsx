@@ -1,24 +1,38 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PackageCard from "./PackageCard.tsx";
 
 function Packages(props) {
+  const getSortedPackages = () => {
+    switch(props.sort) {
+      case 'alphabetically':
+          return [...props.packages].sort((a, b) => {
+              return a.resort.name.localeCompare(b.resort.name);
+          });
+      case 'price':
+          return [...props.packages].sort((a, b) => {
+              return a.flightDetails.price - b.flightDetails.price;
+          });
+      case 'star rating':
+          return [...props.packages].sort((a, b) => {
+              return b.resort.starRating - a.resort.starRating;
+          });
+      default:
+          return props.packages;
+    }
+  };
 
-    useEffect(() => {
-      console.log(props.sort);
-    },[props.sort]);
-
-    return (         
-        <div className="packages">
-        {props.packages.map(packageData => 
-            <PackageCard
-                key={packageData.resort.id}
-                resort={packageData.resort}
-                flightDetails={packageData.flightDetails}
-                bookingDetails={packageData.bookingDetails}
-            />
-        )}
-        </div>
-    );
+  return (         
+      <div className="packages">
+      {getSortedPackages().map(packageData => 
+          <PackageCard
+              key={packageData.resort.id}
+              resort={packageData.resort}
+              flightDetails={packageData.flightDetails}
+              bookingDetails={packageData.bookingDetails}
+          />
+      )}
+      </div>
+  );
 }
 
 export default Packages;
