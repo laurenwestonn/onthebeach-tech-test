@@ -17,10 +17,10 @@ function PackageCard({ resort, bookingDetails, flightDetails}) {
                 price={bookingDetails.price}
             />
             </div>
-            <p className="container">
+            <div className="container">
                 <h3>Overview</h3>
                 {resort.overview}
-            </p>
+            </div>
         </div>
     );
 }
