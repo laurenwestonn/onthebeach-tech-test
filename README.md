@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `json-server --watch data.js --port 3001`
+
+Runs the fake server that you can request from within this localhost react app.
+
 ### `npm start`
 
 Runs the app in the development mode.\
