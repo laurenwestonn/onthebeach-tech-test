@@ -4,6 +4,7 @@ type ImageType = {
 };
 
 type ResortType = {
+    id: string;
     name: string;
     regionName: string;
     countryName: string;
@@ -50,3 +51,7 @@ export type PackageSummaryType = {
     airportName: string;
     price: PriceType;
 };
+
+export type PackagesType = {
+    packagesData: PackageType[];
+}

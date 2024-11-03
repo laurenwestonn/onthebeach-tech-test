@@ -1,5 +1,5 @@
 const baseUrl = "http://localhost:3001"
 
-export const getHotels = () => {
+export const getPackages = () => {
     return fetch(`${baseUrl}/data`);
 };

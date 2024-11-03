@@ -1,21 +1,21 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { getHotels } from './api';
-import HotelsList from './components/Packages.tsx';
+import { getPackages } from './api';
+import Packages from './components/Packages.tsx';
 
 function App() {
 
-  const [hotels, setHotels] = useState([]);
+  const [packagesData, setPackagesData] = useState([]);
 
   useEffect(() => {  
-    getHotels()
+    getPackages()
       .then(res => res.json())
-      .then(data => setHotels(data))
+      .then(data => setPackagesData(data))
       .catch(err => console.log(err));
   }, []);
 
   return (
-    <HotelsList hotels={hotels}/>
+    <Packages packagesData={packagesData}/>
   );
 }
 

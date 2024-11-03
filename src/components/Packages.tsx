@@ -1,16 +1,14 @@
 import React from "react";
 import PackageCard from "./PackageCard.tsx";
+import { PackagesType } from "./types/PackageTypes.tsx";
 
-type HotelsListType = {
-    hotels: any[]
-}
-
-function HotelsList(props: HotelsListType) {
+function Packages(props: PackagesType) {
     return (
         <div>
-            <h1>Hotels</h1>
-            {props.hotels.map(packageData => 
+            <h1>Packages</h1>
+            {props.packagesData.map(packageData => 
                 <PackageCard 
+                    key={packageData.resort.id}
                     resort={packageData.resort}
                     flightDetails={packageData.flightDetails}
                     bookingDetails={packageData.bookingDetails}
@@ -20,4 +18,4 @@ function HotelsList(props: HotelsListType) {
     )
 }
 
-export default HotelsList;
+export default Packages;
